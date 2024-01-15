@@ -1,2 +1,1 @@
-# Paint
-A web-based painting application, made in collaboration with CSUS.
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
