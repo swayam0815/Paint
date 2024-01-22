@@ -1,5 +1,8 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
 export default function Home() {
   return (
@@ -10,19 +13,19 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={styles.title}><a>
-          Welcome to the Paint app!</a>
+        <h1 className={styles.title}>
+          <a>Welcome to the Paint app!</a>
         </h1>
 
         <p className={styles.description}>
           This entire <code>index.js</code> page is created using a template.
         </p>
         <p className={styles.description}>
-          Whenever you're ready delete the exisiting code and start building your own app.
+          Whenever you're ready delete the exisiting code and start building
+          your own app.
         </p>
-
+        <App />
       </main>
-
 
       <style jsx>{`
         main {
@@ -56,15 +59,8 @@ export default function Home() {
           border-radius: 5px;
           padding: 0.75rem;
           font-size: 1.1rem;
-          font-family:
-            Menlo,
-            Monaco,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
+          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
       `}</style>
 
@@ -73,17 +69,8 @@ export default function Home() {
         body {
           padding: 0;
           margin: 0;
-          font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            Segoe UI,
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            Fira Sans,
-            Droid Sans,
-            Helvetica Neue,
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }
         * {
