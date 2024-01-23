@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import PaintCanvas from "./components/PaintCanvas";
 
 export default function Home() {
   return (
@@ -13,18 +13,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={styles.title}>
-          <a>Welcome to the Paint app!</a>
-        </h1>
-
-        <p className={styles.description}>
-          This entire <code>index.js</code> page is created using a template.
-        </p>
-        <p className={styles.description}>
-          Whenever you're ready delete the exisiting code and start building
-          your own app.
-        </p>
-        <App />
+        <PaintCanvas />        
       </main>
 
       <style jsx>{`
