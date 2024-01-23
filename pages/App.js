@@ -1,12 +1,11 @@
 import React from "react";
-import Brush from "./components/Brush";
 import Canvas from "./components/canvas";
 
+//returns the canvas
 const App = () => {
   return (
     <div className="App">
       <Canvas />
-      <Brush />
     </div>
   );
 };
