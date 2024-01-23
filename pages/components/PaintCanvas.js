@@ -10,13 +10,13 @@ const Canvas = () => {
   const [drawing, setDrawing] = useState(false);
 
   //setting the initial value for the canvas
-  useEffect(({ width, height }) => {
+  useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
     //setting the width and the height of the canvas
-    canvas.width = { width };
-    canvas.height = { height };
+    canvas.width = 500;
+    canvas.height = 500;
 
     //setting the brush
     ctx.lineWidth = 2;
