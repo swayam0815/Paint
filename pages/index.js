@@ -9,19 +9,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className={styles.title}><a>
-          Welcome to the Paint app!</a>
+      <div>
+        <h1><a>
+          <span className={styles.card}>Paint.it!</span></a>
         </h1>
+        <canvas className={styles.paint}>
 
-        <p className={styles.description}>
-          This entire <code>index.js</code> page is created using a template.
-        </p>
-        <p className={styles.description}>
-          Whenever you're ready delete the exisiting code and start building your own app.
-        </p>
+        </canvas>
 
-      </main>
+      </div>
 
 
       <style jsx>{`
