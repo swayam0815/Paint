@@ -26,11 +26,16 @@ const Canvas = () => {
 
   //when onMouseDown, and starts drawing
   const isDrawing = (e) => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+
     const mouseX = e.nativeEvent.offsetX;
     const mouseY = e.nativeEvent.offsetY;
 
-    ctx.beginPath();
-    ctx.moveTo(mouseX, mouseY);
+    if (!drawing) {
+      ctx.beginPath();
+      ctx.moveTo(mouseX, mouseY);
+    }
 
     setDrawing(true);
   };
@@ -42,23 +47,27 @@ const Canvas = () => {
 
   //when onMouseMove, and moves the mouse to draw
   const continueDrawing = (e) => {
-    if (!drawing) return;
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
 
     const mouseX = e.nativeEvent.offsetX;
     const mouseY = e.nativeEvent.offsetY;
 
-    ctx.lineTo(mouseX, mouseY);
-    ctx.stroke();
+    if (!drawing) return;
+    else {
+      ctx.lineTo(mouseX, mouseY);
+      ctx.stroke();
+    }
   };
 
   return (
     <canvas
       id="canvas"
       ref={canvasRef}
-      onMouseDown={() => isDrawing}
-      onMouseMove={() => continueDrawing}
-      onMouseUp={() => stopDrawing}
-      onMouseOut={() => stopDrawing}
+      onMouseDown={isDrawing}
+      onMouseUp={stopDrawing}
+      onMouseMove={continueDrawing}
+      onMouseOut={stopDrawing}
       style={{ border: "1px solid black" }}
     ></canvas>
   );
